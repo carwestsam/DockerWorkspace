@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo docker run -p 3000:3000 -v $PWD/back_end:/app --link database:database --rm --name backend -d app_back

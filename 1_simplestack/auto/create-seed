@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ 1 -ne "$#" ]; then
+    echo "need an name for seed file"
+    exit 1
+fi
+
+sudo docker run -v $PWD/migration:/migration --rm app_migration /bin/bash -c "./node_modules/.bin/sequelize seed:create --name $1"
+
+sudo chmod -R a+wr $PWD/migration/seeders/
