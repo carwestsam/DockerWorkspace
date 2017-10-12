@@ -1,0 +1,5 @@
+#/bin/bash
+
+rm -rf gogs/logs/*
+rm -rf postgres/logs/*
+
