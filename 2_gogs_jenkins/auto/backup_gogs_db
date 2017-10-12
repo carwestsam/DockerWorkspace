@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec gogs_database /bin/bash -c "pg_dump -U postgres postgres > /docker-entrypoint-initdb.d/init.sql"

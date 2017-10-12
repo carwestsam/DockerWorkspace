@@ -7,11 +7,15 @@ services:
       - "10080:3000"
     volumes:
       - ./gogs/repos:/data/repos
+      - ./gogs/conf:/data/gogs/conf
       - ./gogs/logs:/data/logs
     links:
-      - gogs_database:database  
+      - gogs_database:database
+    depends_on:
+      - gogs_database
   gogs_database:
-    image: 'postgres'
+    container_name: gogs_database
+    image: 'postgres:9.6.5'
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -20,5 +24,5 @@ services:
     ports:
       - "54320:5432"
     volumes:
-      - ./postgres/logs:/var/log/postgres
-
+      - ./postgres/initdb.d:/docker-entrypoint-initdb.d
+      - ./postgres/logs:/var/log/postgresql
