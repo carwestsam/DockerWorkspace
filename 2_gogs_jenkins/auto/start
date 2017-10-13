@@ -3,5 +3,5 @@
 docker-compose up -d
 
 open http://localhost:10080/root/sample
-
+open http://localhost:10086
 

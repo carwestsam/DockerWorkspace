@@ -26,3 +26,11 @@ services:
     volumes:
       - ./postgres/initdb.d:/docker-entrypoint-initdb.d
       - ./postgres/logs:/var/log/postgresql
+  jenkins:
+    image: 'jenkins/jenkins:2.84-alpine'
+    ports:
+      - "10086:8080"
+    links:
+      - git:git-server
+    volumes:
+      - ./jenkins/jenkins_home:/var/jenkins_home

@@ -5,3 +5,4 @@ rm -rf postgres/logs/*
 docker-compose up --force-recreate -d
 
 open http://localhost:10080/root/sample
+open http://localhost:10086

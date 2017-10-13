@@ -8,4 +8,13 @@ postgres/initdb.d/*
 gogs/conf/app.ini
 ```
 
+## accounts
+
+#### gogs:
+username: root
+password: root
+
+#### jenkins:
+username: root
+password: root
 
