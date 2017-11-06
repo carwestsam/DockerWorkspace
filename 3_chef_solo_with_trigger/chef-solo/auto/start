@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -v $PWD:/home -it solo /bin/bash
+
